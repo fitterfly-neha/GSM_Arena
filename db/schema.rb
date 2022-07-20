@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_19_111734) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_20_105917) do
   create_table "brands", force: :cascade do |t|
     t.string "brand_name"
     t.string "origin_country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "devices", force: :cascade do |t|
+    t.string "brand_name"
+    t.string "device_name"
+    t.string "screen_size"
+    t.string "camera"
+    t.integer "battery"
+    t.integer "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

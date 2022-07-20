@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand_name: MyString
+  device_name: MyString
+  screen_size: MyString
+  camera: MyString
+  battery: 1
+  brand_id: 1
+
+two:
+  brand_name: MyString
+  device_name: MyString
+  screen_size: MyString
+  camera: MyString
+  battery: 1
+  brand_id: 1
