@@ -5,4 +5,6 @@ class Device < ApplicationRecord
     validates :camera, presence: true, length: {minimum: 1,maximum: 10}
     validates :battery, presence: true, length: {minimum: 3,maximum: 10}
     validates :brand_id, presence: true, length: {minimum: 1,maximum: 5}
+
+    belongs_to :brand
 end
