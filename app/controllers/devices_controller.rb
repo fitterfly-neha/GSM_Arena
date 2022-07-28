@@ -1,10 +1,12 @@
-class DeviceController < ApplicationController
-    def show1
-        @dev = Device.find(params[:id])
-    end
+class DevicesController < ApplicationController
 
     def index
-        @dev = Device.all
+        @brand = Brand.find(params[:id])
+        @devices = @brand.devices
+    end
+
+    def show
+        @device = Device.find(params[:id])
     end
 
     def new
