@@ -1,0 +1,22 @@
+<h1>Brands listing page</h1>
+<br>
+<table  style = "border: 1px solid black">
+  <thead>
+    <tr>
+      <th>Brand Name</th>
+      <th>Origin Country</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+   <tbody>
+    <% @brands.each do |brand| %>
+      <tr>
+        <td><%= brand.brand_name %></td>
+        <td><%= brand.origin_country %></td>
+        <td><%= link_to 'Show', brand_path(brand)%></td>
+        <td><%= link_to 'Edit', edit_brand_path(brand)%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 

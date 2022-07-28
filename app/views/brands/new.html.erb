@@ -1,0 +1,24 @@
+<h1>Add a new Brand</h1>
+
+<% if @brand.errors.any? %>
+    <h3>Brands are not being saved, please have a look at following instructions.</h3>
+    <ul>
+        <%@brand.errors.full_messages do |msg|%>
+            <li><%= msg%></li>
+        <%end%>
+    </ul>
+<%end%>
+ 
+<%= form_with scope: :brand, url: brands_path, local: true do |f| %>
+  <p> 
+    <%= f.label :brand_name %><br/> 
+    <%= f.text_field :brand_name %>
+  </p>
+  <p>
+    <%= f.label :origin_country %><br/> 
+    <%= f.text_field :origin_country %> 
+  </p>
+  <p>
+    <%= f.submit %> 
+  </p>
+<% end %>

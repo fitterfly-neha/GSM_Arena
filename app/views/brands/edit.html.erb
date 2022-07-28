@@ -1,0 +1,26 @@
+<h1>Edit Brand.</h1>
+
+<% if @brand.errors.any? %>
+    <h3>Brand info is not being saved, please have a look at following instructions.</h3>
+    <ul>
+        <%@brand.errors.full_messages do |msg|%>
+            <li><%= msg%></li>
+        <%end%>
+    </ul>
+<%end%>
+
+<%= form_with(model: @brand, local: true) do |fm|%>
+    <p>
+        <%= fm.label :brand_name%><br/>
+        <%= fm.text_field :brand_name%>
+        <br/><br/>
+        <%= fm.label :origin_country%><br/>
+        <%= fm.text_field :origin_country%>
+    </p>
+    <br/>
+    <p>
+        <%= fm.submit%>
+    </p>
+<%end%>
+
+<%= link_to 'Cancel & Return to Brands Listing Page.', brands_path%>

@@ -1,0 +1,45 @@
+<h1>Add a Device</h1>
+
+<% if @dev.errors.any? %>
+    <h3>Device are not being saved, please have a look at following instructions.</h3>
+    <ul>
+        <%@dev.errors.full_messages do |msg|%>
+            <li><%= msg%></li>
+        <%end%>
+    </ul>
+<%end%>
+
+<%= form_with scope: :device, url: devices_path, local: true do |f| %>
+  <p> 
+    <%= f.label :brand_name %><br/> 
+    <%= f.text_field :brand_name %>
+  </p>
+
+  <p>
+    <%= f.label :device_name %><br/> 
+    <%= f.text_field :device_name %>
+  </p>
+
+  <p>
+    <%= f.label :screen_size %><br/> 
+    <%= f.text_field :screen_size %>
+  </p>
+
+  <p>
+    <%= f.label :camera %><br/> 
+    <%= f.text_field :camera %>
+  </p>
+
+  <p>
+    <%= f.label :battery %><br/> 
+    <%= f.text_field :battery %>
+  </p>
+
+   <p>
+    <%= f.label :brand_id %><br/> 
+    <%= f.text_field :brand_id %>
+  </p>
+  <p>
+    <%= f.submit %> 
+  </p>
+<% end %>
