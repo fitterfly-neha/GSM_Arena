@@ -1,11 +1,18 @@
 <h1>Welcome to Devices</h1>
 <ul>
-  <% @devices.each do |device| %>
-    <p>Device Brand Name: <%= device.brand_name %></p>
-    <p>Device Name: <%= device.device_name %></p>
-    <p>Screen Size: <%= device.screen_size %></p>
-    <p>Camera: <%= device.camera %></p>
-    <p>Battery: <%= device.battery %></p>
-    <p><a href="/devices/<%= device.id %>">Show</a></p>
+  <% if @devices.count > 0 %>
+    <% @devices.each do |device| %>
+      <li>
+        <p>Device Brand Name: <%= device.brand_name %></p>
+        <p>Device Name: <%= device.device_name %></p>
+        <p>Screen Size: <%= device.screen_size %></p>
+        <p>Camera: <%= device.camera %></p>
+        <p>Battery: <%= device.battery %></p>
+        <p><a href="/brands/<%= device.brand_id %>/devices/<%= device.id %>">Show</a></p>
+      </li>
+      <hr>
+    <% end %>
+  <% else %>
+    <h2>No Devices Found</h2>
   <% end %>
 </ul>
