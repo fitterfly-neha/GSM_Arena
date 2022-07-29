@@ -1,33 +1,35 @@
-class DeviceController < ApplicationController
+class DevicesController < ApplicationController
     def show1
-        @dev = Device.find(params[:id])
+        @device = Device.find(params[:id])
     end
 
     def index
-        @dev = Device.all
+        #@dev = Device.all
+        @brand = Brand.find(params[:id])
+        @devices = @brand.devices
     end
 
     def new
-        @dev = Device.new
+        @device = Device.new
     end
 
     def edit
-        @dev = Device.find(params[:id])
+        @device = Device.find(params[:id])
     end
 
     def create
-        @dev = Brand.new(params.require(:device).permit(:brand_name,:device_name,:screen_size,:camera,:battery,:brand_id))
-        if @dev.save
+        @device = Brand.new(params.require(:device).permit(:brand_name,:device_name,:screen_size,:camera,:battery,:brand_id))
+        if @device.save
             flash[:notice] = "Device Inserted Succesfully."
-            redirect_to @dev
+            redirect_to @device
         else
             render 'new'
         end
     end
 
     def update
-        @dev = Device.find(params[:id])
-        if @dev.update(params.require(:device).permit(:brand_name,:device_name,:screen_size,:camera,:battery,:brand_id))
+        @device = Device.find(params[:id])
+        if @device.update(params.require(:device).permit(:brand_name,:device_name,:screen_size,:camera,:battery,:brand_id))
             flash[:notice] = "Device Updated Succesfully."
             redirect_to devices_path
         else

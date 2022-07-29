@@ -16,6 +16,7 @@
         <td><%= brand.origin_country %></td>
         <td><%= link_to 'Show', brand_path(brand)%></td>
         <td><%= link_to 'Edit', edit_brand_path(brand)%></td>
+        <td><a style="margin-left: 20px;" href="/brands/<%= brand.id %>/devices">Devices</a></td>
       </tr>
     <% end %>
   </tbody>

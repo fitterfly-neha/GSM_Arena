@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'pages#home'
   get 'about' , to: 'pages#about'
-  resources :brands, only: [:show, :index, :new, :create, :edit, :update]
-  resources :devices, only:[:show, :index, :new, :create, :edit, :update]
+  #resources :brands, only: [:show, :index, :new, :create, :edit, :update]
+  #resources :devices, only:[:show, :index, :new, :create, :edit, :update]
+
+  resources :brands do
+    resources :devices
+  end
+
 end

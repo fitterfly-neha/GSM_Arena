@@ -1,9 +1,9 @@
 <h1>Add a Device</h1>
 
-<% if @dev.errors.any? %>
+<% if @device.errors.any? %>
     <h3>Device are not being saved, please have a look at following instructions.</h3>
     <ul>
-        <%@dev.errors.full_messages do |msg|%>
+        <%@device.errors.full_messages do |msg|%>
             <li><%= msg%></li>
         <%end%>
     </ul>
