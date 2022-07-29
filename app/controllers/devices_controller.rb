@@ -1,7 +1,7 @@
 class DevicesController < ApplicationController
 
     def index
-        @brand = Brand.find(params[:id])
+        @brand = Brand.find(params[:brand_id])
         @devices = @brand.devices
     end
 
