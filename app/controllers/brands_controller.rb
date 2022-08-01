@@ -6,8 +6,6 @@ class BrandsController < ApplicationController
 
     def index
         @brands = Brand.all
-        #@brands = Brand.includes(:devices).all
-        #@devices = @brand.devices
     end
 
     def new
