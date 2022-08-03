@@ -1,29 +1,9 @@
-<h1>Brands listing page</h1>
-<br>
-<table  style = "border: 1px solid black">
-  <thead>
-    <tr>
-      <th>Brand Name</th>
-      <th>Origin Country</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
 
-   <tbody>
-    <% @brands.each do |brand| %>
-      <tr>
-        <td><%= brand.brand_name %></td>
-        <td><%= brand.origin_country %></td>
-        <td><%= link_to 'Show', brand_path(brand)%></td>
-        <td><%= link_to 'Edit', edit_brand_path(brand)%></td>
-        <td><a style="margin-left: 20px;" href="/brands/<%= brand.id %>/devices">Devices</a></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> 
 
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
+  <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Brands listing page</h1>
+
     <div class="flex flex-wrap -m-4">
     <% @brands.each do |brand| %>
       <div class="p-4 lg:w-1/3">
