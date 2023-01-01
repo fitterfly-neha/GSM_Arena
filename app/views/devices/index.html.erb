@@ -1,20 +1,33 @@
+<html>
 <h1>Welcome to Devices</h1>
+
 <ul>
   <% if @devices.count > 0 %>
     <% @devices.each do |device| %>
-      <li>
+    <div class="grid text-center">
+      <div class="g-col-6 g-col-md-4">
+        <li>
         <p>Device Brand Name: <%= device.brand_name %></p>
         <p>Device Name: <%= device.device_name %></p>
         <p>Screen Size: <%= device.screen_size %></p>
         <p>Camera: <%= device.camera %></p>
         <p>Battery: <%= device.battery %></p>
-        <p><a href="/brands/<%= device.brand_id %>/devices/<%= device.id %>">Show</a></p>
+        <a href="/brands/<%= device.brand_id %>/devices/<%= device.id %>">Show</a> |
+        <a href="/brands/<%=device.brand_id%>/devices/<%=device.id%>/edit">Edit Device</a>
+        <!-- <%= link_to 'Edit Device', edit_brand_device_path(device), class: "text-indigo-500 inline-flex items-center pr-2"%> | -->
+        <!-- <a href="/brands/<%=device.brand_id%>/devices/new">Create New Device</a> -->
+        <%= link_to 'Add new Device', new_brand_device_path(device), class: "text-indigo-500 inline-flex items-center pr-2"%>
         
       </li>
       <hr>
+      </div>
+    </div>
+
+      
     <% end %>
   <% else %>
     <h2>No Devices Found</h2>
   <% end %>
 </ul>
+</html>
 
